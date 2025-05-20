@@ -25,10 +25,6 @@ This is the free Lite version of CozyCommerce, featuring a basic landing page to
 
 In this part of the documentation we will show you how to install CozyCommerce.
 
-<Callout type="info">
-  Before moving forward, make sure you have Node.js installed on your machine.
-  Otherwise the installation commands will not work.
-</Callout>
 
 **1.** Download template and extract it. Then CD into that directory and run this command to install the dependencies:
 
