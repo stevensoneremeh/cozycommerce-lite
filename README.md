@@ -1,6 +1,6 @@
-# Full-Stack Self-Hosted eCommerce Solution
+# Next.js Full-Stack Complete eCommerce Solution
 
-A full-stack, self-hosted eCommerce platform built with Next.js. Launch your online store with core features like product management, secure Stripe payments, built-in custom CMS, and responsive design. Enjoy full control, lifetime free updates, and comprehensive documentation to build, develop, and scale your store effortlessly.
+A Complete and full-stack eCommerce platform built with Next.js. Launch your online store with core features like product management, secure Stripe payments, built-in custom CMS, and responsive design. Enjoy full control, lifetime free updates, and comprehensive documentation to build, develop, and scale your store effortlessly.
 
 #### [🌐 Visit Website](https://cozycommerce.dev/)
 #### [📑 Explore Docs](https://cozycommerce.dev/docs)
