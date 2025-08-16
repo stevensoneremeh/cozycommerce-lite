@@ -1,5 +1,3 @@
-
-
 export default function BestSellerSectionTitle() {
   return (
     <div className="max-w-md mx-auto mb-14">

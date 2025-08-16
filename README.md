@@ -45,7 +45,7 @@ We recommend using a version manager like [`nvm`](https://github.com/nvm-sh/nvm)
 
 Create a `.env` file in the root directory and add the following environment variables:
 
-```env
+\`\`\`env
 NEXTAUTH_URL="http://localhost:3000"
 NEXT_PUBLIC_SITE_URL="http://localhost:3000"
 SITE_URL="http://localhost:3000"
@@ -73,7 +73,7 @@ CLOUDINARY_API_SECRET="your_cloudinary_api_secret"
 DATABASE_URL="your_database_url"
 NEXTAUTH_SECRET="your_nextauth_secret"
 FORMBOLD_FORM_ID="your_formbold_form_id"
-```
+\`\`\`
 
 > ⚠️ **Important:** Replace the placeholder values with your actual API keys and credentials. Never commit your `.env` file to version control to protect sensitive data.
 
@@ -85,21 +85,21 @@ Follow these steps to get the project running locally:
 
 1. **Install project dependencies:**
 
-   ```bash
+   \`\`\`bash
    npm install
-   ```
+   \`\`\`
 
 2. **Generate the Prisma client (for database access):**
 
-   ```bash
+   \`\`\`bash
    npx prisma generate
-   ```
+   \`\`\`
 
 3. **Start the development server:**
 
-   ```bash
+   \`\`\`bash
    npm run dev
-   ```
+   \`\`\`
 
 Once the server is running, you can access your local store at: [http://localhost:3000](http://localhost:3000)
 
@@ -154,5 +154,3 @@ Explore our full documentation for deeper integration guidance:
 ---
 
 Need help? Feel free to reach out or open an issue on the [GitHub repository](https://github.com/CozyCommerce/cozycommerce-lite). Happy coding! 🎉
-
-

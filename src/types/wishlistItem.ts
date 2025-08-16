@@ -1,5 +1,3 @@
-
-
 export type WishlistItem = {
   id: string;
   title: string;

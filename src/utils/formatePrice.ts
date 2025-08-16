@@ -10,4 +10,3 @@ export const formatPrice = (price: number) => {
       maximumFractionDigits: hasDecimals ? 2 : 0,
     }).format(price);
   };
-  

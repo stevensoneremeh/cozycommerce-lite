@@ -987,4 +987,3 @@ export function ArrowLeftIcon(props: IconProps) {
     </svg>
   );
 }
-

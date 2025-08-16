@@ -1,62 +1,59 @@
-"use client";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { SwiperRef } from "swiper/react";
+"use client"
+import { useCallback, useEffect, useRef, useState } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import type { SwiperRef } from "swiper/react"
 
 // Import Swiper styles
-import { ChevronLeftIcon, ChevronRightIcon } from "@/assets/icons";
-import "swiper/css";
-import "swiper/css/navigation";
-import SingleItem from "./SingleItem";
-import { Category } from "@prisma/client";
+import { ChevronLeftIcon, ChevronRightIcon } from "@/assets/icons"
+import "swiper/css"
+import "swiper/css/navigation"
+import SingleItem from "./SingleItem"
+// import { Category } from "@/lib/types";
+import type { Category } from "@prisma/client"
 
 export default function CategoryCarouselArea({
   categories,
 }: {
-  categories: Category[];
+  categories: Category[]
 }) {
-  const sliderRef = useRef<SwiperRef>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isEnd, setIsEnd] = useState(false);
+  const sliderRef = useRef<SwiperRef>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isEnd, setIsEnd] = useState(false)
 
   const handlePrev = useCallback(() => {
-    if (!sliderRef.current?.swiper) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
+    if (!sliderRef.current?.swiper) return
+    sliderRef.current.swiper.slidePrev()
+  }, [])
 
   const handleNext = useCallback(() => {
-    if (!sliderRef.current?.swiper) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
+    if (!sliderRef.current?.swiper) return
+    sliderRef.current.swiper.slideNext()
+  }, [])
 
   useEffect(() => {
     if (sliderRef.current) {
       // @ts-ignore
-      sliderRef.current.swiper.init();
+      sliderRef.current.swiper.init()
     }
-  }, []);
+  }, [])
   const onSlideChange = useCallback(() => {
     if (sliderRef.current?.swiper) {
-      setCurrentIndex(sliderRef.current.swiper.activeIndex);
-      setIsEnd(sliderRef.current.swiper.isEnd);
+      setCurrentIndex(sliderRef.current.swiper.activeIndex)
+      setIsEnd(sliderRef.current.swiper.isEnd)
     }
-  }, []);
+  }, [])
   return (
     <div className="swiper categories-carousel common-carousel">
       {/* <!-- section title --> */}
       <div className="flex items-center justify-between mb-16">
         <div>
-          <h2 className="text-xl font-semibold xl:text-heading-5 text-dark">
-            Browse by Category
-          </h2>
+          <h2 className="text-xl font-semibold xl:text-heading-5 text-dark">Browse by Category</h2>
         </div>
 
         <div className="flex items-center gap-3">
           <button
             onClick={handlePrev}
-            className={`swiper-button-prev ${
-              currentIndex === 0 ? "opacity-50 pointer-events-none" : ""
-            }`}
+            className={`swiper-button-prev ${currentIndex === 0 ? "opacity-50 pointer-events-none" : ""}`}
             aria-label="previous button"
             disabled={currentIndex === 0}
           >
@@ -65,9 +62,7 @@ export default function CategoryCarouselArea({
 
           <button
             onClick={handleNext}
-            className={`swiper-button-next ${
-              isEnd ? "opacity-50 pointer-events-none" : ""
-            }`}
+            className={`swiper-button-next ${isEnd ? "opacity-50 pointer-events-none" : ""}`}
             aria-label="next button"
             disabled={isEnd}
           >
@@ -103,5 +98,5 @@ export default function CategoryCarouselArea({
           ))}
       </Swiper>
     </div>
-  );
+  )
 }

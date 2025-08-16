@@ -28,4 +28,4 @@ export const useTestimonialSwiper = () => {
     onSlideChange,
     currentIndex,
   };
-}; 
+};

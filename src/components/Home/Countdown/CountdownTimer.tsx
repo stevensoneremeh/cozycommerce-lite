@@ -41,4 +41,4 @@ export const CountdownTimer = () => {
       <TimeDisplay value={date.seconds} label="Seconds" />
     </div>
   );
-}; 
+};

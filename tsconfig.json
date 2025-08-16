@@ -31,4 +31,3 @@
 , "reindex.js", "src/algolia/reindex.ts", "src/algolia/reindex.ts", "scripts/import-demo-data.js"  ],
   "exclude": ["node_modules"]
 }
-        

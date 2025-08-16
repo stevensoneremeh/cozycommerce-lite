@@ -48,4 +48,3 @@ export const getEmailLogo = unstable_cache(
   },
   ['email-logo'], { tags: ['email-logo'] }
 );
-

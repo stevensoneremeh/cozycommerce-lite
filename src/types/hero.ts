@@ -1,4 +1,3 @@
-
 export type IHeroSlider = {
   id: number;
   sliderName: string;

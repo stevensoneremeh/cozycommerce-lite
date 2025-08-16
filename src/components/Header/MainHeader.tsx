@@ -1,73 +1,66 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useShoppingCart } from "use-shopping-cart";
-import { menuData } from "./menuData";
-import MobileMenu from "./MobileMenu";
-import DesktopMenu from "./DesktopMenu";
-import {
-  SearchIcon,
-  UserIcon,
-  HeartIcon,
-  CartIcon,
-  MenuIcon,
-  CloseIcon,
-} from "./icons";
-import { HeaderSetting } from "@prisma/client";
-import { useAppSelector } from "@/redux/store";
+"use client"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
+import { useShoppingCart } from "use-shopping-cart"
+import { menuData } from "./menuData"
+import MobileMenu from "./MobileMenu"
+import DesktopMenu from "./DesktopMenu"
+import { SearchIcon, UserIcon, HeartIcon, CartIcon, MenuIcon, CloseIcon } from "./icons"
+import type { HeaderSetting } from "@/lib/types" // Using fallback types when Prisma types are not available
+import { useAppSelector } from "@/redux/store"
 
 type IProps = {
-  headerData?: HeaderSetting | null;
-};
+  headerData?: HeaderSetting | null
+}
 
 const MainHeader = ({ headerData }: IProps) => {
-  const [navigationOpen, setNavigationOpen] = useState(false);
-  const [stickyMenu, setStickyMenu] = useState(false);
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
-  const { handleCartClick, cartCount, totalPrice } = useShoppingCart();
-  const wishlistCount = useAppSelector((state) => state.wishlistReducer).items
-    ?.length;
+  const [navigationOpen, setNavigationOpen] = useState(false)
+  const [stickyMenu, setStickyMenu] = useState(false)
+  const [searchModalOpen, setSearchModalOpen] = useState(false)
+  const { handleCartClick, cartCount, totalPrice } = useShoppingCart()
+  const wishlistCount = useAppSelector((state) => state.wishlistReducer).items?.length
 
   const handleOpenCartModal = () => {
-    handleCartClick();
-  };
+    handleCartClick()
+  }
 
   // Sticky menu
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
-      setStickyMenu(true);
+      setStickyMenu(true)
     } else {
-      setStickyMenu(false);
+      setStickyMenu(false)
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
+    window.addEventListener("scroll", handleStickyMenu)
     return () => {
-      window.removeEventListener("scroll", handleStickyMenu);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleStickyMenu)
+    }
+  }, [])
 
   // Close mobile menu when screen size changes to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1280) {
-        setNavigationOpen(false);
+        setNavigationOpen(false)
       }
-    };
+    }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize)
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   return (
     <>
       <header
-        className={`fixed left-0 top-0 w-full z-50 bg-white transition-all  ease-in-out duration-300 ${stickyMenu && "shadow-sm"
-          }`}
+        className={`fixed left-0 top-0 w-full z-50 bg-white transition-all  ease-in-out duration-300 ${
+          stickyMenu && "shadow-sm"
+        }`}
       >
         {/* Topbar */}
         <div className="bg-dark py-2.5">
@@ -75,21 +68,14 @@ const MainHeader = ({ headerData }: IProps) => {
             <div className="flex justify-between">
               <div className="hidden lg:block">
                 <p className="text-sm font-medium text-white">
-                  {headerData?.headerText ||
-                    "Get free delivery on orders over $100"}
+                  {headerData?.headerText || "Get free delivery on orders over $100"}
                 </p>
               </div>
               <div className="flex divide-x divide-white/20">
-                  <Link
-                    href="/signup"
-                    className="pr-3 text-sm font-medium text-white transition hover:text-blue-300"
-                  >
-                    Create an account
-                  </Link>
-                <Link
-                  href="#"
-                  className="pl-3 text-sm font-medium text-white transition hover:text-blue-300"
-                >
+                <Link href="/signup" className="pr-3 text-sm font-medium text-white transition hover:text-blue-300">
+                  Create an account
+                </Link>
+                <Link href="#" className="pl-3 text-sm font-medium text-white transition hover:text-blue-300">
                   {"Sign In"}
                 </Link>
               </div>
@@ -133,11 +119,7 @@ const MainHeader = ({ headerData }: IProps) => {
                 <SearchIcon />
               </button>
 
-              <Link
-                href="#"
-                className="transition hover:text-blue focus:outline-none"
-                aria-label="Account"
-              >
+              <Link href="#" className="transition hover:text-blue focus:outline-none" aria-label="Account">
                 <UserIcon />
               </Link>
 
@@ -185,7 +167,7 @@ const MainHeader = ({ headerData }: IProps) => {
         menuData={menuData}
       />
     </>
-  );
-};
+  )
+}
 
-export default MainHeader;
+export default MainHeader

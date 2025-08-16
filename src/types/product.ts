@@ -1,5 +1,3 @@
-
-
 export type Product = {
   id: string;
   title: string;
@@ -56,4 +54,3 @@ export type IProductByDetails = {
   offers: string[] | null;
   sku: string | null;
 };
-

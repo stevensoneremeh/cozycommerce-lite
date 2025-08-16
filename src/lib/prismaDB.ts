@@ -1,13 +1,51 @@
-import { PrismaClient } from "@prisma/client";
+let prisma: any
 
-const prismaClientSingleton = () => {
-  return new PrismaClient();
-};
+try {
+  const { PrismaClient } = require("@prisma/client")
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
+  const prismaClientSingleton = () => {
+    return new PrismaClient()
+  }
 
-export const prisma = globalForPrisma.prisma ?? prismaClientSingleton();
+  const globalForPrisma = globalThis as unknown as {
+    prisma: any | undefined
+  }
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+  prisma = globalForPrisma.prisma ?? prismaClientSingleton()
+
+  if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma
+} catch (error) {
+  console.warn("[v0] PrismaClient not available, using fallback implementation")
+
+  prisma = {
+    category: {
+      findMany: async () => [],
+      findUnique: async () => null,
+    },
+    product: {
+      findMany: async () => [],
+      findUnique: async () => null,
+    },
+    review: {
+      findMany: async () => [],
+    },
+    heroBanner: {
+      findMany: async () => [],
+      findUnique: async () => null,
+    },
+    heroSlider: {
+      findMany: async () => [],
+    },
+    countdown: {
+      findMany: async () => [],
+    },
+    headerSetting: {
+      findFirst: async () => null,
+    },
+    seoSetting: {
+      findFirst: async () => null,
+    },
+  }
+}
+
+export { prisma }

@@ -1,45 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
 @custom-variant dark (&:is(.dark *));
 
-@theme {
-  --font-*: initial;
-  --font-body: "DM Sans", sans-serif;
-
-  --color-*: initial;
-  --color-current: currentColor;
-  --color-transparent: transparent;
-  --color-white: #ffffff;
+@theme {\
+  --font-*: initial;\
+  --font-body: var(--font-dm-sans), "DM Sans\", sans-serif;
+\
+  --color-*: initial;\
+  --color-current: currentColor;\
+  --color-transparent: transparent;\
+  --color-white: #ffffff;\
   --color-body: #6c6f93;
-
-  --color-meta-2: #495270;
-  --color-meta-3: #606882;
-  --color-meta-4: #8d93a5;
-  --color-meta-5: #bbbec9;
+\
+  --color-meta-2: #495270;\
+  --color-meta-3: #606882;\
+  --color-meta-4: #8d93a5;\
+  --color-meta-5: #bbbec9;\
   --color-meta: #f7f9fc;
-
-  --color-dark-2: #495270;
-  --color-dark-3: #606882;
-  --color-dark-4: #8d93a5;
-  --color-dark-5: #bbbec9;
-  --color-dark: #1c274c;
+\
+  --color-dark-2: #495270;\
+  --color-dark-3: #606882;\
+  --color-dark-4: #8d93a5;\
+  --color-dark-5: #bbbec9;\
+  --color-dark: #1c274c;\
   --color-darkLight: #3d486b;
-
-  --color-gray-1: #f9fafb;
-  --color-gray-2: #f3f4f6;
-  --color-gray-3: #e5e7eb;
-  --color-gray-4: #d1d5db;
-  --color-gray-5: #9ca3af;
-  --color-gray-6: #6b7280;
-  --color-gray-7: #374151;
+\
+  --color-gray-1: #f9fafb;\
+  --color-gray-2: #f3f4f6;\
+  --color-gray-3: #e5e7eb;\
+  --color-gray-4: #d1d5db;\
+  --color-gray-5: #9ca3af;\
+  --color-gray-6: #6b7280;\
+  --color-gray-7: #374151;\
   --color-gray: #f3f5f6;
-
-  --color-blue: #3c50e0;
-  --color-blue-dark: #1c3fb7;
+\
+  --color-blue: #3c50e0;\
+  --color-blue-dark: #1c3fb7;\
   --color-blue-light: #5475e5;
   --color-blue-light-2: #8099ec;
   --color-blue-light-3: #adbcf2;
@@ -354,7 +352,7 @@ input[type="search"]::-webkit-search-results-decoration {
   @apply bg-gray-1 rounded-md border-r! text-dark-4 py-3 pl-5 pr-9 duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20;
 }
 .custom-select-common .select-selected:after {
-  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.41469 5.03569L2.41467 5.03571L2.41749 5.03846L7.76749 10.2635L8.0015 10.492L8.23442 10.2623L13.5844 4.98735L13.5844 4.98735L13.5861 4.98569C13.6809 4.89086 13.8199 4.89087 13.9147 4.98569C14.0092 5.08024 14.0095 5.21864 13.9155 5.31345C13.9152 5.31373 13.915 5.31401 13.9147 5.31429L8.16676 10.9622L8.16676 10.9622L8.16469 10.9643C8.06838 11.0606 8.02352 11.0667 8.00039 11.0667C7.94147 11.0667 7.89042 11.0522 7.82064 10.9991L2.08526 5.36345C1.99127 5.26865 1.99154 5.13024 2.08609 5.03569C2.18092 4.94086 2.31986 4.94086 2.41469 5.03569Z' fill='%238D93A5' stroke='%238D93A5' strokeWidth='0.666667'/%3E%3C/svg%3E%0A");
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.41469 5.03569L2.41467 5.03571L2.41749 5.03846L7.76749 10.2635L8.0015 10.492L8.23442 10.2623L13.5844 4.98735L13.5844 4.98735L13.5861 4.98569C13.6809 4.89086 13.8199 4.89087 13.9147 4.98569C13.9152 5.08024 13.9155 5.21864 13.9147 5.31345C13.9142 5.31373 13.915 5.31401 13.9147 5.31429L8.16676 10.9622L8.16676 10.9622L8.16469 10.9643C8.06838 11.0606 8.02352 11.0667 8.00039 11.0667C7.94147 11.0667 7.89042 11.0522 7.82064 10.9991L2.08526 5.36345C1.99127 5.26865 1.99154 5.13024 2.08609 5.03569C2.18092 4.94086 2.31986 4.94086 2.41469 5.03569Z' fill='%238D93A5' stroke='%238D93A5' strokeWidth='0.666667'/%3E%3C/svg%3E%0A");
   @apply block mt-1 right-4;
 }
 .custom-select-common .select-selected.select-arrow-active:after {
