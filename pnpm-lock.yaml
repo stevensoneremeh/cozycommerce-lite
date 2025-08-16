@@ -131,6 +131,9 @@ importers:
       redux:
         specifier: latest
         version: 5.0.1
+      redux-persist:
+        specifier: ^6.0.0
+        version: 6.0.0(react@19.0.0)(redux@5.0.1)
       stripe:
         specifier: ^14.8.0
         version: 14.8.0

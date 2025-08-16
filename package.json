@@ -53,6 +53,7 @@
     "react-redux": "latest",
     "react-tooltip": "^5.28.1",
     "redux": "latest",
+    "redux-persist": "^6.0.0",
     "stripe": "^14.8.0",
     "styled-components": "^6.1.15",
     "sweetalert2": "latest",
